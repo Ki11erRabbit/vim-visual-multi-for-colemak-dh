@@ -57,8 +57,8 @@ fun! vm#maps#all#permanent() abort
     let maps["Select All"][0]            = leader.'A'
     let maps["Add Cursor Down"][0]       = '<C-Down>'
     let maps["Add Cursor Up"][0]         = '<C-Up>'
-    let maps["Select l"][0]              = '<S-Right>'
-    let maps["Select h"][0]              = '<S-Left>'
+    let maps["Select i"][0]              = '<S-Right>'
+    let maps["Select m"][0]              = '<S-Left>'
     let maps["Visual Regex"][0]          = visual.'/'
     let maps["Visual All"][0]            = visual.'A'
     let maps["Visual Add"][0]            = visual.'a'
@@ -92,8 +92,8 @@ fun! vm#maps#all#buffer() abort
 
   "select
   call extend(maps, {
-        \"Find Next":               ['n',         'n'],
-        \"Find Prev":               ['N',         'n'],
+        \"Find Next":               ['j',         'n'],
+        \"Find Prev":               ['J',         'n'],
         \"Goto Next":               [']',         'n'],
         \"Goto Prev":               ['[',         'n'],
         \"Seek Up":                 ['<C-b>',     'n'],
