@@ -27,10 +27,10 @@ let s:base = {
       \"Find Subword Under":      ['', 'x'],
       \"Select Cursor Down":      ['', 'n'],
       \"Select Cursor Up":        ['', 'n'],
-      \"Select j":                ['', 'n'],
-      \"Select k":                ['', 'n'],
-      \"Select l":                ['', 'n'],
-      \"Select h":                ['', 'n'],
+      \"Select n":                ['', 'n'],
+      \"Select e":                ['', 'n'],
+      \"Select t":                ['', 'n'],
+      \"Select m":                ['', 'n'],
       \"Select w":                ['', 'n'],
       \"Select b":                ['', 'n'],
       \"Select E":                ['', 'n'],
@@ -46,9 +46,9 @@ fun! vm#maps#all#permanent() abort
   let leader = g:Vm.leader.default
   let visual = g:Vm.leader.visual
 
-  " map <c-n> in any case
-  let maps["Find Under"][0]              = '<C-n>'
-  let maps["Find Subword Under"][0]      = '<C-n>'
+  " map <c-t> in any case
+  let maps["Find Under"][0]              = '<C-t>'
+  let maps["Find Subword Under"][0]      = '<C-t>'
 
   if g:VM_default_mappings
     let maps["Reselect Last"][0]         = leader.'gS'
@@ -161,17 +161,17 @@ fun! vm#maps#all#buffer() abort
         \"Select Cursor Up":        ['<M-C-Up>',    'n'],
         \"Add Cursor Down":         ['<C-Down>',    'n'],
         \"Add Cursor Up":           ['<C-Up>',      'n'],
-        \"Select j":                ['<S-Down>',    'n'],
-        \"Select k":                ['<S-Up>',      'n'],
-        \"Select l":                ['<S-Right>',   'n'],
-        \"Select h":                ['<S-Left>',    'n'],
-        \"Single Select l":         ['<M-Right>',   'n'],
-        \"Single Select h":         ['<M-Left>',    'n'],
-        \"Select e":                ['',            'n'],
+        \"Select n":                ['<S-Down>',    'n'],
+        \"Select e":                ['<S-Up>',      'n'],
+        \"Select i":                ['<S-Right>',   'n'],
+        \"Select m":                ['<S-Left>',    'n'],
+        \"Single Select i":         ['<M-Right>',   'n'],
+        \"Single Select m":         ['<M-Left>',    'n'],
+        \"Select j":                ['',            'n'],
         \"Select ge":               ['',            'n'],
         \"Select w":                ['',            'n'],
         \"Select b":                ['',            'n'],
-        \"Select E":                ['',            'n'],
+        \"Select J":                ['',            'n'],
         \"Select BBW":              ['',            'n'],
         \"Move Right":              ['<M-S-Right>', 'n'],
         \"Move Left":               ['<M-S-Left>',  'n'],
@@ -209,13 +209,13 @@ fun! vm#maps#all#buffer() abort
 
   let insert_keys = get(g:, 'VM_insert_special_keys', ['c-v'])
   if index(insert_keys, 'c-a') >= 0
-    let maps["I CtrlA"] = ['<C-a>', 'i']
+    let maps["T CtrlA"] = ['<C-a>', 't']
   endif
   if index(insert_keys, 'c-e') >= 0
-    let maps["I CtrlE"] = ['<C-e>', 'i']
+    let maps["T CtrlE"] = ['<C-e>', 't']
   endif
   if index(insert_keys, 'c-v') >= 0
-    let maps["I Paste"] = ['<C-v>', 'i']
+    let maps["T Paste"] = ['<C-v>', 't']
   endif
 
   "edit
